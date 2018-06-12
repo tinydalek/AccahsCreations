@@ -21,7 +21,5 @@ Route::get('/products/{post}', 'ProductsController@viewproduct');
 
 Route::get('/edit/{post}', 'ProductsController@editproduct');
 
-// Add new product to database
-
 Route::post('/products', 'ProductsController@store');
 
