@@ -178,7 +178,7 @@
         </div>
 
         <div class="form-group row">
-            <label for="image_path" class="col-sm-2 col-md-2 control-label">Upload Image:</label>
+            <label for="product_image" class="col-sm-2 col-md-2 control-label">Upload Image:</label>
             <div class="input-group col-sm-7 col-md-7">
                 <input type="text" class="form-control" id="product_image" name="product_image" readonly>
                 <span class="input-group-btn">
