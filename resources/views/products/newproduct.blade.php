@@ -71,6 +71,7 @@
 
 </script>
 
+
 <h3>Add New Product</h3>
 <br/>
     <form class="form-horizontal" method="POST" action="/products">
