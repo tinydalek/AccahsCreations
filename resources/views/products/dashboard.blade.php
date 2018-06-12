@@ -18,9 +18,8 @@
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
-                        <th colspan=2> Create a New Product Listing </th>
-                        <th class="td-actions">
-                            <a href="/newproduct" class="btn btn-md btn-info"><i class="btn-icon-only icon-ok"> Create </i></a>
+                        <th colspan=4 class="td-actions">
+                            <a href="/newproduct" class="btn btn-md btn-default"><i class="btn-icon-only icon-ok"> Create a New Product Listing </i></a>
                         </th>
                     </tr>
                     <tr>
@@ -37,7 +36,7 @@
                     <td> {{ $post->created_at->toFormattedDateString() }} </td>
                     <td class="td-actions">
                         <a href="/products/{{ $post->id }} " class="btn btn-small btn-info"><i class="btn-icon-only icon-ok"> View</i></a>
-                        <a href="/edit/{{ $post->id }}" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove">Edit</i></a>
+                        <a href="/products/{{ $post->id }}/edit" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove">Edit</i></a>
                     </td>
                   </tr>
 

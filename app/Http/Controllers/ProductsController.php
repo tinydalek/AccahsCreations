@@ -35,13 +35,6 @@ class ProductsController extends Controller
         return view('products.viewproduct', compact('post'));
     } 
 
-    public function editproduct($id) 
-    {
-        $post = Product::find($id);
-        
-        return view('products.editproduct', compact('post'));
-    }
-
     public function store() 
     {
     
@@ -63,16 +56,36 @@ class ProductsController extends Controller
 
         $post->product_inventory = request('product_inventory');
 
-        $post->product_image = request('product_image');
-
         // Save it to the database
 
         $post->save();
 
         // And the redirect to the dashboard
 
-        return redirect('/dashboard');
+        return redirect('/dashboard')->with('success', 'Product Listing Created');
 
     } 
+
+    public function edit(Product $post) 
+    {   
+        return view('products.editproduct', compact('post'));
+    }
+    
+    public function update(Request $request, Product $post)
+    {
+        $post->update($request->all());
+
+        // And the redirect to the dashboard
+
+         return redirect('/dashboard')->with('success', 'Product Listing Updated') ;
+
+    }
+
+    public function destroy(Product $post)
+    {
+        $post->delete();
+        return redirect('/dashboard')->with('success', 'Product Listing Deleted') ;
+    }
+    
 
 }

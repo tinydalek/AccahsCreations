@@ -19,7 +19,11 @@ Route::get('/newproduct', 'ProductsController@newproduct');
 
 Route::get('/products/{post}', 'ProductsController@viewproduct');
 
-Route::get('/edit/{post}', 'ProductsController@editproduct');
-
 Route::post('/products', 'ProductsController@store');
+
+Route::get('/products/{post}/edit', 'ProductsController@edit');
+
+Route::patch('/products/{post}', 'ProductsController@update');
+
+Route::delete('/products/{post}', 'ProductsController@destroy');
 

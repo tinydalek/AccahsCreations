@@ -2,76 +2,6 @@
 
 @section('content')
 
-<style>
-
-    .btn-file {
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-file input[type=file] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 100px;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: block;
-}
-
-#img-upload{
-    width: 100%;
-}
-
-</style>
-
-<script>
-
-    $(document).ready( function() {
-    	$(document).on('change', '.btn-file :file', function() {
-		var input = $(this),
-			label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-		input.trigger('fileselect', [label]);
-		});
-
-		$('.btn-file :file').on('fileselect', function(event, label) {
-		    
-		    var input = $(this).parents('.input-group').find(':text'),
-		        log = label;
-		    
-		    if( input.length ) {
-		        input.val(log);
-		    } else {
-		        if( log ) alert(log);
-		    }
-	    
-		});
-		function readURL(input) {
-		    if (input.files && input.files[0]) {
-		        var reader = new FileReader();
-		        
-		        reader.onload = function (e) {
-		            $('#img-upload').attr('src', e.target.result);
-		        }
-		        
-		        reader.readAsDataURL(input.files[0]);
-		    }
-		}
-
-		$("#image_path").change(function(){
-		    readURL(this);
-		}); 	
-	});
-
-</script>
-
-
 <h3>Add New Product</h3>
 <br/>
     <form class="form-horizontal" method="POST" action="/products">
@@ -178,18 +108,6 @@
             </div>
         </div>
 
-        <div class="form-group row">
-            <label for="image_path" class="col-sm-2 col-md-2 control-label">Upload Image:</label>
-            <div class="input-group col-sm-7 col-md-7">
-                <input type="text" class="form-control" id="product_image" name="product_image" readonly>
-                <span class="input-group-btn">
-                <span class="btn btn-basic btn-file">
-                    Browse <input type="file" id="product_image" name="product_image">
-                </span>
-                </span>
-            </div>
-            <img id='img-upload'/>
-        </div> 
         <br/>        
         <button id="submit" type="submit" class="btn btn-info btn-lg">Create Listing</button>
         

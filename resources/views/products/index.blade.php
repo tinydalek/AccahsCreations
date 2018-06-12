@@ -8,7 +8,7 @@
 
     <div class="col-md-3">
         <div class="card mb-4 box-shadow">
-            <img class="card-img-top" src=" {{ $post->product_image }} " alt="Product Image">
+            <img class="card-img-top" src="" alt="Product Image">
             <div class="card-header">
                 {{ $post->product_name }}
             </div>
