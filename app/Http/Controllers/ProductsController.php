@@ -53,6 +53,14 @@ class ProductsController extends Controller
 
         $post->product_name = request('product_name');
 
+        $post->product_image = request('product_image');
+        
+        if(Input::hasFile('file')){
+
+			$file = Input::file('file');
+			$file->move('products', $post->getClientOriginalName());
+        };
+
         $post->category_id = request('category_id');
 
         $post->colour_id = request('colour_id');
@@ -63,7 +71,6 @@ class ProductsController extends Controller
 
         $post->product_inventory = request('product_inventory');
 
-        $post->product_image = request('product_image');
 
         // Save it to the database
 
