@@ -4,8 +4,7 @@
 
 <h3> Edit Listing: {{ $post->product_name }} </h3>
 <br/>
-    <form class="form-horizontal" method="POST" action="/products/{{ $post->id }}">
-        {{ method_field('PATCH') }}
+    <form class="form-horizontal" method="POST" action="/products/{{ $post->id }}/edit">
         {{ csrf_field() }}
 
         <div class="form-group row">
@@ -93,7 +92,7 @@
             <label for="product_inventory" class="col-sm-1 col-md-1 control-label">Inventory:</label>
             <div class="col-sm-3 col-md-3">    
                 <select class="form-control" id="product_inventory" name="product_inventory" value="{{ isset($post) ? $post->product_inventory : old('product_inventory') }}" required>
-                    <option value="">{{ $post->product_inventory }}</option>
+                    <option value=""></option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>

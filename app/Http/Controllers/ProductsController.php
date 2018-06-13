@@ -77,14 +77,14 @@ class ProductsController extends Controller
 
         // And the redirect to the dashboard
 
-         return redirect('/dashboard')->with('success', 'Product Listing Updated') ;
+         return redirect('/dashboard');
 
     }
 
     public function destroy(Product $post)
     {
         $post->delete();
-        return redirect('/dashboard')->with('success', 'Product Listing Deleted') ;
+        return redirect('/dashboard');
     }
     
 

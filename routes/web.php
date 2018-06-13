@@ -23,7 +23,7 @@ Route::post('/products', 'ProductsController@store');
 
 Route::get('/products/{post}/edit', 'ProductsController@edit');
 
-Route::patch('/products/{post}', 'ProductsController@update');
+Route::post('/products/{post}/edit', 'ProductsController@update');
 
-Route::delete('/products/{post}', 'ProductsController@destroy');
+Route::post('/products/{post}/delete', 'ProductsController@destroy');
 

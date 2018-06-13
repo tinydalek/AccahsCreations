@@ -40,8 +40,8 @@
                             <a href="/products/{{ $post->id }}/edit" class="btn btn-small btn-info"><i class="btn-icon-only icon-ok"> Edit </i></a> 
                         </td>
                         <td colspan=2 class="td-actions"> 
-                            <form method="POST" action="/products/{{ $post->id }}">
-                                {{ method_field('DELETE') }}
+                            <form method="POST" action="/products/{{ $post->id }}/delete">
+                                {{ csrf_field() }}
                                 <button id="submit" type="submit" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove">Delete</button>
                             </form>
                         </td>

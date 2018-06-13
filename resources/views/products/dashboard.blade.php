@@ -53,6 +53,11 @@
             <div class="widget-content">
               <table class="table table-striped table-bordered">
                 <thead>
+                <tr>
+                        <th colspan=4 class="td-actions">
+                            <a href="" class="btn btn-md btn-default"><i class="btn-icon-only icon-ok"> View Completed Orders </i></a>
+                        </th>
+                    </tr>
                   <tr>
                     <th colspan=2> Orders </th>
                     <th class="td-actions"> Manage </th>
